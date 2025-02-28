@@ -1,7 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { products } from "../assets/assets";
 import { toast } from "react-toastify";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export const ShopContext = createContext();
 
@@ -10,13 +11,12 @@ const ShopContextProvider = (props) => {
   const delivery_fee = 10;
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  const navigate = useNavigate();
+  // Initialize cartItems from localStorage
   const [cartItems, setCartItems] = useState(() => {
-   
-    // Initialize cart from localStorage if available
     const savedCart = localStorage.getItem("cartItems");
     return savedCart ? JSON.parse(savedCart) : {};
   });
-  const navigate = useNavigate();
 
   // Save cartItems to localStorage whenever it changes
   useEffect(() => {
@@ -29,7 +29,7 @@ const ShopContextProvider = (props) => {
       return;
     }
 
-    const cartData = { ...cartItems }; // Create a shallow copy of cartItems
+    const cartData = { ...cartItems };
 
     if (cartData[itemId]) {
       cartData[itemId][size] = (cartData[itemId][size] || 0) + 1;
@@ -47,12 +47,10 @@ const ShopContextProvider = (props) => {
     if (cartData[itemId] && cartData[itemId][size]) {
       cartData[itemId][size] -= 1;
 
-      // Remove the size if the quantity is 0
       if (cartData[itemId][size] === 0) {
         delete cartData[itemId][size];
       }
 
-      // Remove the item if no sizes remain
       if (Object.keys(cartData[itemId]).length === 0) {
         delete cartData[itemId];
       }
@@ -94,31 +92,28 @@ const ShopContextProvider = (props) => {
     return totalPrice + delivery_fee;
   };
 
-  const updateQuantity = async (itemId,size,quantity) =>{
-    let cartData= structuredClone(cartItems);  
+  const updateQuantity = async (itemId, size, quantity) => {
+    let cartData = structuredClone(cartItems);
     cartData[itemId][size] = quantity;
-    setCartItems(cartData); 
-  }
+    setCartItems(cartData);
+  };
 
   const getCartAmount = () => {
     let totalAmount = 0;
     for(const items in cartItems){
       let itemInfo = products.find((product)=> product._id === items);
-       for(const item in cartItems[items]){
-        try
-        {
-          if (cartItems[items][item] > 0)
-          {
-            totalAmount += itemInfo.price * cartItems[items][item]; 
+      for(const item in cartItems[items]){
+        try{
+          if (cartItems[items][item]>0){
+            totalAmount += itemInfo.price * cartItems[items][item]
+
           }
-        } catch (error)
-        {
+        } catch (error){
 
         }
-       }
+      }
     }
     return totalAmount;
-
   }
 
   const value = {
@@ -138,6 +133,7 @@ const ShopContextProvider = (props) => {
     updateQuantity,
     getCartAmount,
     navigate
+    
   };
 
   return <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>;

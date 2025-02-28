@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <form id="authForm">
+            
+            <!-- FABRICA Title Inside the Form -->
+            <h1 class="title">FABRICA</h1>
+
+            <div class="form-header">
+                <p id="formTitle">Sign Up</p>
+                <hr>
+            </div>
+
+            <div id="nameField">
+                <input type="text" id="name" placeholder="Name">
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <input type="email" id="email" placeholder="Email">
+            <span class="error" id="emailError"></span>
+
+            <input type="password" id="password" placeholder="Password">
+            <span class="error" id="passwordError"></span>
+
+            <div class="options">
+                <p class="forgot-password">Forgot your password?</p>
+                <p id="toggleForm">Login Here</p>
+            </div>
+
+            <button type="submit" id="submitBtn">Sign Up</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

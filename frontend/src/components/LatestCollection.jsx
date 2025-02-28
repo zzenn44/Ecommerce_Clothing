@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from "react"; // Added useState import
 import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";

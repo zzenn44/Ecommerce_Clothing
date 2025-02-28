@@ -17,10 +17,8 @@ const Navbar = () => {
 		<div className="flex items-center justify-between py-5 font-medium relative">
 			{/* Logo */}
 			<Link to="/">
-				<img src={assets.logo1} className="w-36  " alt="Logo" />
+				<img src={assets.logo} className="w-36" alt="Logo" />
 			</Link>
-	
-
 
 			{/* Navigation Links for Large Screens */}
 			<ul className="hidden sm:flex gap-5 text-sm text-gray-700">
@@ -50,7 +48,7 @@ const Navbar = () => {
 
 				{/* Profile Dropdown */}
 				<div className="group relative">
-					<Link to='/login'> <img
+					<Link to='/login'><img
 						className="w-5 cursor-pointer"
 						src={assets.profile_icon}
 						alt="Profile Icon"

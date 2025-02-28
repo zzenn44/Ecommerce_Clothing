@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-10 my-10 mt-40 text-sm px-5 sm:px-20">
         {/* Logo Section */}
         <div>
-          <img src={assets.logo1} className="mb-5 w-32 bg-gray-200" alt="Company Logo" />
+          <img src={assets.logo} className="mb-5 w-32" alt="Company Logo" />
         </div>
 
         {/* Text Section */}
@@ -34,7 +34,7 @@ const Footer = () => {
           <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             <li>+977 9843698967</li>
-            <li>078csit009.jenisha@scst.edu.np</li>
+            <li>078CSIT009.jenisha@scst.edu.np</li>
           </ul>
         </div>
       </div>
@@ -43,7 +43,7 @@ const Footer = () => {
       <div className="bg-gray-200">
         <hr />
         <p className="py-5 text-sm text-center text-gray-700">
-          Copyright 2025 @ fabrica.com - ALL RIGHTS Reserved.
+          Copyright 2025 @FABRICA.com - ALL RIGHTS Reserved.
         </p>
       </div>
     </div>

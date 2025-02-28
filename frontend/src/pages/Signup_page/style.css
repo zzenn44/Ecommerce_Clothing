@@ -1,0 +1,99 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* FABRICA Title Inside Form */
+.title {
+    color: limegreen;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Form Header */
+.form-header p {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-header hr {
+    width: 50px;
+    height: 2px;
+    background: black;
+    margin: 10px auto;
+    border: none;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+}
+
+/* Button */
+button {
+    background: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #333;
+}
+
+/* Options (Forgot Password & Toggle) */
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+.options p {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.options p:hover {
+    text-decoration: underline;
+}
+
+/* Error Messages */
+.error {
+    color: red;
+    font-size: 12px;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
